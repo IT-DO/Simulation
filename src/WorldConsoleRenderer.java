@@ -8,18 +8,27 @@ public class WorldConsoleRenderer {
 
     public void render(WorldMap worldMap) {
 
-        for (int rank = 10; rank > 1; rank--) {
+        for (int rank = 9; rank >= 0; rank--) {
+            //System.out.println("Зашел в луп 1");
             String line = "";
-            for (int file = 1; file < 10; file++) {
-                if (worldMap.entities.get(new Coordinates(rank, file)) != null) {
+            //System.out.println("Инициировал пустую line");
+
+            for (int file = 0; file <= 9; file++) {
+                //System.out.println("Зашел в луп 2");
+                // if (worldMap.entities.get(new Coordinates(rank, file)) != null) {
+                if (worldMap.getEntity(new Coordinates(rank, file)) != null) {
                     line += getSprite(worldMap.entities.get(new Coordinates(rank, file)));
+                    //System.out.println("Добавил сущность к line");
                 } else {
                     line += "\u2B1B";
+                  //  System.out.println("Добавил пустое поле к line");
                 }
             }
-            line += ANSI_RESET;
 
+            line += ANSI_RESET;
+            //System.out.println("добавил ANSI_RESET к line");
             System.out.println(line);
+            //System.out.println("Вывел line");
         }
     }
 

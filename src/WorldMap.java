@@ -29,27 +29,32 @@ public class WorldMap {
         for (int i = 0; i < GRASS_COUNT; i++) {
             Coordinates coordinates = generateEmptyRandomCoordinates();
             setEntities(coordinates, new Grass(coordinates));
+            //System.out.println("создал сущность");
 
         }
 
         for (int i = 0; i < TREE_COUNT; i++) {
             Coordinates coordinates = generateEmptyRandomCoordinates();
             setEntities(coordinates, new Tree(coordinates, 20));
+            //System.out.println("создал сущность");
         }
 
         for (int i = 0; i < ROCK_COUNT; i++) {
             Coordinates coordinates = generateEmptyRandomCoordinates();
             setEntities(coordinates, new Rock(coordinates));
+            //System.out.println("создал сущность");
         }
 
         for (int i = 0; i < PREDATOR_COUNT; i++) {
             Coordinates coordinates = generateEmptyRandomCoordinates();
             setEntities(coordinates, new Predator(coordinates, 20, 3, 20));
+            //System.out.println("создал сущность");
         }
 
         for (int i = 0; i < HERBIVORE_COUNT; i++) {
             Coordinates coordinates = generateEmptyRandomCoordinates();
             setEntities(coordinates, new Herbivore(coordinates, 20, 3));
+            //.out.println("создал сущность");
         }
 
     }
@@ -57,7 +62,6 @@ public class WorldMap {
 
 
     private Coordinates generateEmptyRandomCoordinates() {
-
         int randomFile = r.nextInt(WORLDMAP_FILES_SIZE);
         int randomRank = r.nextInt(WORLDMAP_RANKS_SIZE);
 
